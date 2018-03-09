@@ -11,7 +11,7 @@ defmodule PhoenixAndElm do
       # Start the Ecto repository
       supervisor(PhoenixAndElm.Repo, []),
       # Start the endpoint when the application starts
-      supervisor(PhoenixAndElm.Endpoint, []),
+      supervisor(PhoenixAndElm.Endpoint, [])
       # Start your own worker by calling: PhoenixAndElm.Worker.start_link(arg1, arg2, arg3)
       # worker(PhoenixAndElm.Worker, [arg1, arg2, arg3]),
     ]
