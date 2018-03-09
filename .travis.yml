@@ -16,5 +16,5 @@ before_script:
   - mix do ecto.create
 
 script:
-  - mix test
+  - mix test --cover
   - mix format --check-formatted mix.exs "lib/**/*.{ex,exs}" "test/**/*.{ex,exs}"
