@@ -13,7 +13,7 @@ services:
   - postgresql
 
 before_script:
-  - mix do ecto.create
+  - mix ecto.create
 
 script:
   - mix test --cover
