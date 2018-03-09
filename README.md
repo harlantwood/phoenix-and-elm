@@ -1,5 +1,9 @@
 # PhoenixAndElm
 
+[![Build Status](https://travis-ci.org/harlantwood/phoenix-and-elm.svg?branch=dev)](https://travis-ci.org/harlantwood/phoenix-and-elm)
+[![CircleCI](https://circleci.com/gh/harlantwood/phoenix-and-elm/tree/dev.svg?style=svg)](https://circleci.com/gh/harlantwood/phoenix-and-elm/tree/dev)
+[![Coverage Status](https://coveralls.io/repos/github/harlantwood/phoenix-and-elm/badge.svg?branch=dev)](https://coveralls.io/github/harlantwood/phoenix-and-elm?branch=master)
+
 ![ContactList](https://monosnap.com/file/14nD2kWbnvcuBh5a9L9XifX0GQ0OqQ.png)
 
 ## Tutorial
