@@ -17,5 +17,5 @@ jobs:
       - run: mix local.rebar
       - run: mix deps.get
       - run: mix ecto.create
+      - run: mix format --check-formatted mix.exs "lib/**/*.{ex,exs}" "test/**/*.{ex,exs}"
       - run: mix test
-      - run: mix format --check-formatted
