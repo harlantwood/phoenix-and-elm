@@ -1,6 +1,3 @@
-# Elixir CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-elixir/ for more details
 version: 2
 jobs:
   build:
@@ -17,5 +14,6 @@ jobs:
       - run: mix local.rebar
       - run: mix deps.get
       - run: mix ecto.create
-      - run: mix format --check-formatted mix.exs "lib/**/*.{ex,exs}" "test/**/*.{ex,exs}"
       - run: mix test
+      - run: mix format --check-formatted mix.exs "lib/**/*.{ex,exs}" "test/**/*.{ex,exs}"
+      - run: ./node_modules/.bin/elm-format --validate web/elm/src

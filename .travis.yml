@@ -14,7 +14,9 @@ services:
 
 before_script:
   - mix ecto.create
+  - yarn
 
 script:
   - mix test --cover
   - mix format --check-formatted mix.exs "lib/**/*.{ex,exs}" "test/**/*.{ex,exs}"
+  - ./node_modules/.bin/elm-format --validate web/elm/src
