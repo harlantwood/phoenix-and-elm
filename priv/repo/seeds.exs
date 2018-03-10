@@ -48,7 +48,7 @@ for index <- 0..99 do
     birth_date: "#{Seeds.random_number(1970, 1990)}-#{Seeds.random_number(1, 12)}-#{Seeds.random_number(1,28)}",
     location: Faker.Address.country(),
     phone_number: Faker.Phone.EnUs.phone,
-    email: Faker.Internet.email(first_name),
+    email: Faker.Internet.email,
     picture: "http://api.randomuser.me/portraits/#{picture_gender}/#{index}.jpg",
     headline: Faker.Lorem.sentence(3),
   }

@@ -48,7 +48,7 @@ defmodule PhoenixAndElm.Mixfile do
     [
       {:coverex, "~> 1.4.10", only: :test},
       {:cowboy, "~> 1.0"},
-      {:faker, git: "https://github.com/bigardone/faker", branch: "master"},
+      {:faker, "~> 0.9.0"},
       {:gettext, "~> 0.11"},
       {:phoenix, "~> 1.2.1"},
       {:phoenix_ecto, "~> 3.0"},
