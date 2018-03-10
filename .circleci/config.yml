@@ -2,13 +2,12 @@ version: 2
 jobs:
   build:
     docker:
-      - image: elixir:1.6.2
+      - image: elixir:1.6.2-node
       - image: postgres:9.4.1
         environment:
           POSTGRES_USER: postgres
     steps:
       - checkout
-      - run: npm i -g yarn
       - run: yarn
       - run: mix local.hex --force
       - run: mix local.rebar
