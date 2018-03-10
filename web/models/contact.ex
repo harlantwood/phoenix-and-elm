@@ -12,7 +12,7 @@ defmodule PhoenixAndElm.Contact do
     field :first_name, :string
     field :last_name, :string
     field :gender, :integer
-    field :birth_date, Ecto.Date
+    field :birth_date, :date
     field :location, :string
     field :phone_number, :string
     field :email, :string
