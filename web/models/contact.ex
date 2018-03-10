@@ -9,15 +9,15 @@ defmodule PhoenixAndElm.Contact do
   @derive {Poison.Encoder, except: [:__meta__, :inserted_at, :updated_at]}
 
   schema "contacts" do
-    field :first_name, :string
-    field :last_name, :string
-    field :gender, :integer
-    field :birth_date, :date
-    field :location, :string
-    field :phone_number, :string
-    field :email, :string
-    field :headline, :string
-    field :picture, :string
+    field(:first_name, :string)
+    field(:last_name, :string)
+    field(:gender, :integer)
+    field(:birth_date, :date)
+    field(:location, :string)
+    field(:phone_number, :string)
+    field(:email, :string)
+    field(:headline, :string)
+    field(:picture, :string)
 
     timestamps()
   end
@@ -27,8 +27,28 @@ defmodule PhoenixAndElm.Contact do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:first_name, :last_name, :gender, :birth_date, :location, :phone_number, :email, :headline, :picture])
-    |> validate_required([:first_name, :last_name, :gender, :birth_date, :location, :phone_number, :email, :headline, :picture])
+    |> cast(params, [
+      :first_name,
+      :last_name,
+      :gender,
+      :birth_date,
+      :location,
+      :phone_number,
+      :email,
+      :headline,
+      :picture
+    ])
+    |> validate_required([
+      :first_name,
+      :last_name,
+      :gender,
+      :birth_date,
+      :location,
+      :phone_number,
+      :email,
+      :headline,
+      :picture
+    ])
   end
 
   @doc """
@@ -40,6 +60,7 @@ defmodule PhoenixAndElm.Contact do
   Returns a full text search query
   """
   def search(query, ""), do: query
+
   def search(query, search_query) do
     search_query = ts_query_format(search_query)
 
@@ -64,9 +85,9 @@ defmodule PhoenixAndElm.Contact do
 
   defp ts_query_format(search_query) do
     search_query
-    |> String.trim
+    |> String.trim()
     |> String.split(" ")
-    |> Enum.map(&("#{&1}:*"))
+    |> Enum.map(&"#{&1}:*")
     |> Enum.join(" & ")
   end
 end
