@@ -16,6 +16,7 @@
     "clean-css-brunch": "~2.0.0",
     "css-brunch": "~2.6.1",
     "elm-brunch": "^0.7.0",
+    "elm-format": "^0.7.0-exp",
     "javascript-brunch": "~2.0.0",
     "nib": "^1.1.2",
     "stylus-brunch": "^2.8.0",
