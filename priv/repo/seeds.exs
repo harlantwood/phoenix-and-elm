@@ -32,7 +32,7 @@ Repo.delete_all Contact
 
 IO.puts "---- Creating people"
 
-for index <- 1..100 do
+for index <- 0..99 do
   first_name = Faker.Name.first_name
   {gender_id, gender_name} = Enum.random Contact.genders
   gender_name = to_string(gender_name)
