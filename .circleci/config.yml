@@ -8,12 +8,13 @@ jobs:
           POSTGRES_USER: postgres
     steps:
       - checkout
-
-      # specify any bash command here prefixed with `run: `
+      - run: yarn
       - run: mix local.hex --force
       - run: mix local.rebar
       - run: mix deps.get
       - run: mix ecto.create
-      - run: mix test
+      - run: mix ecto.migrate
+      - run: mix test --cover
+      - run: mix run priv/repo/seeds.exs
       - run: mix format --check-formatted mix.exs "lib/**/*.{ex,exs}" "test/**/*.{ex,exs}"
       - run: ./node_modules/.bin/elm-format --validate web/elm/src

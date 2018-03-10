@@ -13,10 +13,12 @@ services:
   - postgresql
 
 before_script:
-  - mix ecto.create
   - yarn
+  - mix ecto.create
+  - mix ecto.migrate
 
 script:
   - mix test --cover
+  - mix run priv/repo/seeds.exs
   - mix format --check-formatted mix.exs "lib/**/*.{ex,exs}" "test/**/*.{ex,exs}"
   - ./node_modules/.bin/elm-format --validate web/elm/src
