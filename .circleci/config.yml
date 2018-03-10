@@ -8,12 +8,14 @@ jobs:
           POSTGRES_USER: postgres
     steps:
       - checkout
-      - run: yarn
       - run: mix local.hex --force
       - run: mix local.rebar
       - run: mix deps.get
+
+      - run: yarn
       - run: mix ecto.create
       - run: mix ecto.migrate
+
       - run: mix test --cover
       - run: mix run priv/repo/seeds.exs
       - run: mix format --check-formatted mix.exs "lib/**/*.{ex,exs}" "test/**/*.{ex,exs}"
