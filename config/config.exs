@@ -20,20 +20,7 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
-config :arthur, :push, [
-  {:post,
-   [
-     "#{Path.expand("node_modules/.bin/elm-format", System.cwd!())} web/elm/src --yes"
-   ]}
-]
-
-config :arthur, :ci, [
-  {:post,
-   [
-     "mix run priv/repo/seeds.exs > /dev/null",
-     "#{Path.expand("node_modules/.bin/elm-format", System.cwd!())} --validate web/elm/src"
-   ]}
-]
+import_config "arthur.exs"
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
