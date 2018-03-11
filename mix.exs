@@ -46,7 +46,8 @@ defmodule PhoenixAndElm.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:arthur, git: "https://github.com/harlantwood/arthur", branch: "dev"},
+      #      {:arthur, git: "https://github.com/harlantwood/arthur", branch: "dev"},
+      {:arthur, path: "../arthur"},
       {:coverex, "~> 1.4.10", only: :test},
       {:cowboy, "~> 1.0"},
       {:faker, git: "https://github.com/igas/faker", branch: "master"},

@@ -19,6 +19,4 @@ before_script:
 
 script:
   - mix test --cover
-  - mix run priv/repo/seeds.exs > /dev/null
-  - mix format --check-formatted mix.exs "lib/**/*.{ex,exs}" "test/**/*.{ex,exs}"
-  - ./node_modules/.bin/elm-format --validate web/elm/src
+  - mix format --check-formatted
