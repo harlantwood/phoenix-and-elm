@@ -12,7 +12,11 @@ defmodule PhoenixAndElm.Mixfile do
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps(),
-      test_coverage: [tool: Coverex.Task, coveralls: true, ignore_modules: []]
+      test_coverage: [
+        tool: Coverex.Task,
+        coveralls: true,
+        ignore_modules: []
+      ]
     ]
   end
 
@@ -50,6 +54,7 @@ defmodule PhoenixAndElm.Mixfile do
       #      {:arthur, path: "../arthur"},
       {:coverex, "~> 1.4.10", only: :test},
       {:cowboy, "~> 1.0"},
+      {:credo, "~> 0.9.0-rc1", only: [:dev, :test], runtime: false},
       {:faker, git: "https://github.com/igas/faker", branch: "master"},
       {:gettext, "~> 0.11"},
       {:phoenix, "~> 1.3.2"},
