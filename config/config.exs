@@ -20,6 +20,13 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
+config :arthur, :push, [
+  {:post,
+   [
+     "#{Path.expand("node_modules/.bin/elm-format", System.cwd!())} web/elm/src"
+   ]}
+]
+
 config :arthur, :ci, [
   {:post,
    [
