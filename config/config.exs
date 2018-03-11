@@ -20,6 +20,21 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
+config :arthur,
+       :ci,
+       {:post,
+        [
+          "mix run priv/repo/seeds.exs > /dev/null",
+          "./node_modules/.bin/elm-format --validate web/elm/src"
+        ]}
+
+#             post: [
+#               "mix run priv/repo/seeds.exs > /dev/null",
+#               "./node_modules/.bin/elm-format --validate web/elm/src"
+#             ]
+#           }
+#         }
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"

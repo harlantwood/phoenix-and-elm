@@ -18,5 +18,4 @@ before_script:
   - mix ecto.migrate
 
 script:
-  - mix test --cover
-  - mix format --check-formatted
+  - mix arthur ci
