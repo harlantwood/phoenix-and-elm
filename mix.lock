@@ -1,5 +1,5 @@
 %{
-  "arthur": {:git, "https://github.com/harlantwood/arthur", "816b5895bb9bd36c3c00233bec20ea8dfbaa7feb", [branch: "dev"]},
+  "arthur": {:git, "https://github.com/harlantwood/arthur", "bbbe33ff6fd4375199169e956f4ad50279961482", [branch: "dev"]},
   "bunt": {:hex, :bunt, "0.2.0", "951c6e801e8b1d2cbe58ebbd3e616a869061ddadcc4863d0a2182541acae9a38", [:mix], [], "hexpm"},
   "certifi": {:hex, :certifi, "2.0.0", "a0c0e475107135f76b8c1d5bc7efb33cd3815cb3cf3dea7aefdd174dabead064", [:rebar3], [], "hexpm"},
   "connection": {:hex, :connection, "1.0.4", "a1cae72211f0eef17705aaededacac3eb30e6625b04a6117c1b2db6ace7d5976", [:mix], [], "hexpm"},
