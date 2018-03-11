@@ -23,7 +23,7 @@ config :logger, :console,
 config :arthur, :push, [
   {:post,
    [
-     "#{Path.expand("node_modules/.bin/elm-format", System.cwd!())} web/elm/src"
+     "#{Path.expand("node_modules/.bin/elm-format", System.cwd!())} web/elm/src --yes"
    ]}
 ]
 
