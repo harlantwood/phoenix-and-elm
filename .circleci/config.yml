@@ -16,7 +16,4 @@ jobs:
       - run: mix ecto.create
       - run: mix ecto.migrate
 
-      - run: mix test --cover
-      - run: mix run priv/repo/seeds.exs > /dev/null
-      - run: mix format --check-formatted mix.exs "lib/**/*.{ex,exs}" "test/**/*.{ex,exs}"
-      - run: ./node_modules/.bin/elm-format --validate web/elm/src
+      - run: mix arthur ci
