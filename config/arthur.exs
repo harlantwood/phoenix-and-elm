@@ -1,11 +1,9 @@
 use Mix.Config
 
-config :arthur, :push, [
-  post:
-   [
-     "#{Path.expand("node_modules/.bin/elm-format", System.cwd!())} web/elm/src --yes"
-   ]
-]
+config :arthur, :push,
+  post: [
+    "#{Path.expand("node_modules/.bin/elm-format", System.cwd!())} web/elm/src --yes"
+  ]
 
 config :arthur, :ci, [
   {:post,
