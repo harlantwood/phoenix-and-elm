@@ -40,7 +40,7 @@ update msg model =
                 currentRoute =
                     parse location
             in
-                urlUpdate { model | route = currentRoute }
+            urlUpdate { model | route = currentRoute }
 
         NavigateTo route ->
             model ! [ Navigation.newUrl <| toPath route ]

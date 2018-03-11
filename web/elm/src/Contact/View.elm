@@ -1,6 +1,6 @@
 module Contact.View exposing (..)
 
-import Common.View exposing (warningMessage, backToHomeLink)
+import Common.View exposing (backToHomeLink, warningMessage)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
@@ -22,73 +22,73 @@ contactView model =
         fullName =
             model.first_name ++ " " ++ model.last_name
     in
-        ( toString model.id
-        , div
-            [ classes
-            , onClick <| NavigateTo <| ShowContactRoute model.id
-            ]
-            [ div
-                [ class "inner" ]
-                [ header
-                    []
-                    [ div
-                        [ class "avatar-wrapper" ]
-                        [ img
-                            [ class "avatar"
-                            , src model.picture
-                            ]
-                            []
+    ( toString model.id
+    , div
+        [ classes
+        , onClick <| NavigateTo <| ShowContactRoute model.id
+        ]
+        [ div
+            [ class "inner" ]
+            [ header
+                []
+                [ div
+                    [ class "avatar-wrapper" ]
+                    [ img
+                        [ class "avatar"
+                        , src model.picture
                         ]
-                    , div
-                        [ class "info-wrapper" ]
-                        [ h4
-                            []
-                            [ text fullName ]
-                        , ul
-                            [ class "meta" ]
-                            [ li
-                                []
-                                [ i
-                                    [ class "fa fa-map-marker" ]
-                                    []
-                                , text model.location
-                                ]
-                            , li
-                                []
-                                [ i
-                                    [ class "fa fa-birthday-cake" ]
-                                    []
-                                , text model.birth_date
-                                ]
-                            ]
-                        ]
+                        []
                     ]
                 , div
-                    [ class "card-body" ]
-                    [ div
-                        [ class "headline" ]
-                        [ p [] [ text model.headline ] ]
+                    [ class "info-wrapper" ]
+                    [ h4
+                        []
+                        [ text fullName ]
                     , ul
-                        [ class "contact-info" ]
+                        [ class "meta" ]
                         [ li
                             []
                             [ i
-                                [ class "fa fa-phone" ]
+                                [ class "fa fa-map-marker" ]
                                 []
-                            , text model.phone_number
+                            , text model.location
                             ]
                         , li
                             []
                             [ i
-                                [ class "fa fa-envelope" ]
+                                [ class "fa fa-birthday-cake" ]
                                 []
-                            , text model.email
+                            , text model.birth_date
                             ]
                         ]
                     ]
                 ]
+            , div
+                [ class "card-body" ]
+                [ div
+                    [ class "headline" ]
+                    [ p [] [ text model.headline ] ]
+                , ul
+                    [ class "contact-info" ]
+                    [ li
+                        []
+                        [ i
+                            [ class "fa fa-phone" ]
+                            []
+                        , text model.phone_number
+                        ]
+                    , li
+                        []
+                        [ i
+                            [ class "fa fa-envelope" ]
+                            []
+                        , text model.email
+                        ]
+                    ]
+                ]
             ]
-        )
+        ]
+    )
 
 
 showContactView : Model -> Html Msg
@@ -106,18 +106,18 @@ showContactView model =
                 ( _, content ) =
                     contactView contact
             in
-                div
-                    [ id "contacts_show" ]
-                    [ header []
-                        [ h3
-                            []
-                            [ text "Person detail" ]
-                        ]
-                    , backToHomeLink
-                    , div
-                        [ classes ]
-                        [ content ]
+            div
+                [ id "contacts_show" ]
+                [ header []
+                    [ h3
+                        []
+                        [ text "Person detail" ]
                     ]
+                , backToHomeLink
+                , div
+                    [ classes ]
+                    [ content ]
+                ]
 
         Requesting ->
             warningMessage

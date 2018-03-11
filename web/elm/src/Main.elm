@@ -18,7 +18,7 @@ init flags location =
         model =
             initialModel flags currentRoute
     in
-        urlUpdate model
+    urlUpdate model
 
 
 main : Program Flags Model Msg

@@ -89,10 +89,10 @@ headerText model =
                     else
                         "contacts"
             in
-                if totalEntries == 0 then
-                    ""
-                else
-                    (toString totalEntries) ++ " " ++ contactWord ++ " found"
+            if totalEntries == 0 then
+                ""
+            else
+                toString totalEntries ++ " " ++ contactWord ++ " found"
 
         _ ->
             ""
@@ -124,16 +124,16 @@ paginationLink currentPage page =
         classes =
             classList [ ( "active", currentPage == page ) ]
     in
-        ( toString page
-        , li
-            []
-            [ a
-                [ classes
-                , onClick <| Paginate page
-                ]
-                []
+    ( toString page
+    , li
+        []
+        [ a
+            [ classes
+            , onClick <| Paginate page
             ]
-        )
+            []
+        ]
+    )
 
 
 resetButton : Model -> String -> Html Msg
@@ -148,8 +148,8 @@ resetButton model className =
                 , ( "hidden", hide )
                 ]
     in
-        a
-            [ classes
-            , onClick ResetSearch
-            ]
-            [ text "Reset search" ]
+    a
+        [ classes
+        , onClick ResetSearch
+        ]
+        [ text "Reset search" ]

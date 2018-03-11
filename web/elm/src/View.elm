@@ -1,6 +1,6 @@
 module View exposing (..)
 
-import Common.View exposing (warningMessage, backToHomeLink)
+import Common.View exposing (backToHomeLink, warningMessage)
 import Contact.View exposing (showContactView)
 import ContactList.View exposing (indexView)
 import Html exposing (..)

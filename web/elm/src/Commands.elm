@@ -21,7 +21,7 @@ fetch socketUrl page search =
                 |> Push.onOk FetchSuccess
                 |> Push.onError FetchError
     in
-        Phoenix.push socketUrl push
+    Phoenix.push socketUrl push
 
 
 fetchContact : String -> Int -> Cmd Msg
@@ -32,4 +32,4 @@ fetchContact socketUrl id =
                 |> Push.onOk FetchContactSuccess
                 |> Push.onError FetchContactError
     in
-        Phoenix.push socketUrl push
+    Phoenix.push socketUrl push
